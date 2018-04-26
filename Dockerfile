@@ -1,5 +1,12 @@
 FROM alpine:3.7
 
+    RUN apt-get -yqq update && \
+    apt-get -yqq install curl unzip && \
+    apt-get -yqq install xvfb tinywm && \
+    apt-get -yqq install fonts-ipafont-gothic xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic && \
+    apt-get -yqq install python && \
+    rm -rf /var/lib/apt/lists/*
+
 # Install Chrome WebDriver
 RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
     mkdir -p /opt/chromedriver-$CHROMEDRIVER_VERSION && \
