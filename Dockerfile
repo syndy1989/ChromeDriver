@@ -1,4 +1,4 @@
-FROM alpine:3.7
+FROM debian:jessie
 
     RUN apt-get -yqq update && \
     apt-get -yqq install curl unzip && \
